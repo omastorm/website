@@ -3,7 +3,7 @@
   "projectOwner": "omastorm",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": ["CONTRIBUTORS.md"],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "commitConvention": "angular",
@@ -25,6 +25,5 @@
       "contributions": ["code", "doc"]
     }
   ],
-  "commitType": "docs",
-  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><%= contributor.name %></a><br /><%= contributor.contributions.join(\", \") %>"
+  "commitType": "docs"
 }

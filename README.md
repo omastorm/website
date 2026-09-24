@@ -39,7 +39,28 @@ See [the release guide](docs/releases.md) for publishing, Cloudflare setup, and 
 
 ## Contributing
 
-Outside pull requests are currently closed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the review process and [CONTRIBUTORS.md](CONTRIBUTORS.md) for credits.
+Outside pull requests are currently closed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the review process.
+
+## Contributors
+
+Thanks to our contributors. [Contribution types](https://allcontributors.org/docs/en/emoji-key).
+
+<!-- ALL-CONTRIBUTORS-LIST:START -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://omastorm.com/"><img src="https://avatars.githubusercontent.com/u/324308?v=4?s=100" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Code">💻</a> <a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Documentation">📖</a> <a href="#maintenance-wesleygrimes" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/fearjet44"><img src="https://avatars.githubusercontent.com/u/314382095?v=4?s=100" width="100px;" alt="Justin Hagemeier"/><br /><sub><b>Justin Hagemeier</b></sub></a><br /><a href="https://github.com/omastorm/website/commits?author=fearjet44" title="Code">💻</a> <a href="https://github.com/omastorm/website/commits?author=fearjet44" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 
