@@ -34,3 +34,11 @@ depends = ["lint", "links"]
 [tasks.contributors]
 description = "Regenerate contributor credits"
 run = "node_modules/.bin/all-contributors generate"
+
+[tasks.commits]
+description = "Validate commit messages between COMMIT_FROM and COMMIT_TO"
+run = 'node_modules/.bin/commitlint --from "${COMMIT_FROM:?Set COMMIT_FROM}" --to "${COMMIT_TO:?Set COMMIT_TO}" --verbose'
+
+[tasks.pr-title]
+description = "Validate PR_TITLE as a conventional commit"
+run = 'printf "%s\n" "${PR_TITLE:?Set PR_TITLE}" | node_modules/.bin/commitlint --verbose'
