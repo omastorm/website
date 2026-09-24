@@ -64,4 +64,6 @@ Thanks to our contributors. [Contribution types](https://allcontributors.org/doc
 
 ## License
 
-[MIT](LICENSE). Keep the data and map attribution on the website when updating screenshots or content.
+Copyright © 2026 Wes Grimes. All rights reserved. Reuse requires prior written permission; contact [wes@omastorm.com](mailto:wes@omastorm.com). See [LICENSE](LICENSE) and [retained notices](NOTICE).
+
+Keep the data and map attribution intact.
