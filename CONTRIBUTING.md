@@ -55,4 +55,4 @@ COMMIT_FROM=origin/main COMMIT_TO=HEAD mise run commits
 
 ## Recognition
 
-We use All Contributors. Maintainers update `.all-contributorsrc` and run `mise run contributors` to regenerate [CONTRIBUTORS.md](CONTRIBUTORS.md). Include documentation, design, testing, and other contributions alongside code.
+We use All Contributors. Maintainers update `.all-contributorsrc` and run `mise run contributors` to regenerate the [README contributor section](README.md#contributors). Include documentation, design, testing, and other contributions alongside code.
