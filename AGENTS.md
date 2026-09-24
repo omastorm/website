@@ -18,6 +18,8 @@ Use mise tasks for repeatable commands. Pin dependency versions and update the l
 
 ## Changes
 
+Use Conventional Commits for every commit and PR title; see CONTRIBUTING.md for types and local checks. Write PR titles as readable release-note entries.
+
 Keep the change focused on the request. Preserve unrelated work. Add dependencies only when existing tools cannot reasonably handle the task.
 
 Write concise, human-facing documentation. Comments should explain necessary reasoning. Do not leave session notes, task breadcrumbs, chat references, or PR linkbacks in source or docs.

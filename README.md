@@ -35,14 +35,16 @@ The site describes the released Omarchy plugin. Installation and support links p
 
 ## Releases and deployment
 
-Merge small changes into `main` through pull requests. Publishing a GitHub release deploys its tagged commit to the existing Cloudflare Pages project `omastorm`.
+Merge small changes into `main` through pull requests. Release Drafter automatically prepares the next version, tag name, and release notes from merged PRs.
 
-1. Wait for `Website checks` to pass on `main`.
-2. Create a release with a new tag, such as `v0.1.0`, targeting the commit you want to ship on `main`.
-3. Review the release notes and publish the release.
+1. Wait for the checks and `Draft release` workflow to pass on `main`.
+2. Open the draft under [Releases](https://github.com/omastorm/website/releases).
+3. Review the version and notes, then click **Publish release**.
 4. Check the `Deploy` workflow for the result.
 
-The workflow verifies that the commit belongs to `main`, runs `mise run check`, and uploads only `site/` to the Pages production branch `main`. New commits on `main` do not change the release being deployed. Drafts, prereleases, and tag pushes alone do not deploy.
+Features bump the minor version, breaking changes bump the major, and other changes bump the patch. PR titles become short release-note entries with conventional prefixes removed. See [CONTRIBUTING.md](CONTRIBUTING.md) for the required title and commit format.
+
+The draft targets the commit used to generate its notes. Publishing creates the tag and deploys that commit. The deployment checks that it belongs to `main`, runs `mise run check`, and uploads only `site/` to the Pages production branch `main`. Drafts, prereleases, and tag pushes alone do not deploy.
 
 ### Cloudflare setup
 

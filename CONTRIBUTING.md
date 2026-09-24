@@ -27,6 +27,30 @@ AI-assisted contributions have the same requirements: understand every change, v
 
 Describe the user-visible result, link the approved issue, and report the checks you ran. Wes reviews changes before merging. Pull requests are squash merged.
 
+## PR titles and commits
+
+Every PR title and commit message must use Conventional Commits:
+
+```text
+feat: Add a coverage map
+fix: Keep the install button visible on mobile
+chore(deps): Update development tools
+feat!: Replace the installation instructions
+```
+
+Use `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `test`, `build`, `ci`, `chore`, or `revert`. A scope is optional. Use `!` in the PR title for breaking changes and explain the impact in the PR body.
+
+Write the description for readers: say what changes, in plain language. The PR title becomes the squash commit and release-note entry. Features bump the minor version, breaking changes bump the major, and other changes bump the patch. The conventional prefix is removed from release notes.
+
+CI checks the PR title and every commit in the PR. Rebase and reword invalid commits before merging; do not add merge commits to the branch. Keep the checked PR title as the squash commit title.
+
+To check locally:
+
+```sh
+PR_TITLE="feat: Add a coverage map" mise run pr-title
+COMMIT_FROM=origin/main COMMIT_TO=HEAD mise run commits
+```
+
 ## Recognition
 
 We use All Contributors. Maintainers update `.all-contributorsrc` and run `mise run contributors` to regenerate [CONTRIBUTORS.md](CONTRIBUTORS.md). Include documentation, design, testing, and other contributions alongside code.
