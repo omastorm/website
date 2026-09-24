@@ -1,7 +1,7 @@
 {
   "name": "@omastorm/website",
   "private": true,
-  "license": "MIT",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@commitlint/cli": "21.2.3",
     "@commitlint/config-conventional": "21.2.3",

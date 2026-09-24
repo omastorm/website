@@ -51,7 +51,7 @@ Thanks to our contributors. [Contribution types](https://allcontributors.org/doc
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://omastorm.com/"><img src="https://avatars.githubusercontent.com/u/324308?v=4?s=100" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Code">💻</a> <a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Documentation">📖</a> <a href="#maintenance-wesleygrimes" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://omastorm.com/"><img src="https://avatars.githubusercontent.com/u/324308?v=4?s=100" width="100px;" alt="Wesley Grimes"/><br /><sub><b>Wesley Grimes</b></sub></a><br /><a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Code">💻</a> <a href="https://github.com/omastorm/website/commits?author=wesleygrimes" title="Documentation">📖</a> <a href="#maintenance-wesleygrimes" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fearjet44"><img src="https://avatars.githubusercontent.com/u/314382095?v=4?s=100" width="100px;" alt="Justin Hagemeier"/><br /><sub><b>Justin Hagemeier</b></sub></a><br /><a href="https://github.com/omastorm/website/commits?author=fearjet44" title="Code">💻</a> <a href="https://github.com/omastorm/website/commits?author=fearjet44" title="Documentation">📖</a></td>
     </tr>
   </tbody>
@@ -64,4 +64,6 @@ Thanks to our contributors. [Contribution types](https://allcontributors.org/doc
 
 ## License
 
-[MIT](LICENSE). Keep the data and map attribution on the website when updating screenshots or content.
+Copyright © 2026 Wesley Grimes. All rights reserved. Reuse requires prior written permission; contact [info@omastorm.com](mailto:info@omastorm.com). See [LICENSE](LICENSE) and [retained notices](NOTICE).
+
+Keep the data and map attribution intact.
