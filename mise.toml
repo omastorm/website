@@ -1,0 +1,33 @@
+[tools]
+node = "24.21.0"
+
+[tasks.setup]
+description = "Install locked development dependencies"
+run = "npm ci --ignore-scripts"
+
+[tasks.dev]
+description = "Preview at http://127.0.0.1:8765"
+run = "node_modules/.bin/http-server site -a 127.0.0.1 -p 8765 -c-1"
+
+[tasks.format]
+description = "Format source and configuration"
+run = "node_modules/.bin/prettier --write ."
+
+[tasks.lint]
+description = "Check formatting and HTML"
+run = [
+  "node_modules/.bin/prettier --check .",
+  "node_modules/.bin/html-validate 'site/**/*.html'",
+]
+
+[tasks.links]
+description = "Check local page and asset links"
+run = "node_modules/.bin/linkinator site --check-fragments --check-css --config linkinator.config.json"
+
+[tasks.check]
+description = "Run all website checks"
+depends = ["lint", "links"]
+
+[tasks.contributors]
+description = "Regenerate contributor credits"
+run = "node_modules/.bin/all-contributors generate"
