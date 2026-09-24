@@ -51,6 +51,7 @@
       :root {
         --bg: #1a1b26;
         --fg: #a9b1d6;
+        --heading: #c0caf5;
         --dim: #939dbc;
         --line: #2f3349;
         --accent: #7aa2f7;
@@ -60,6 +61,7 @@
         :root {
           --bg: #f5f1e8;
           --fg: #343a48;
+          --heading: #343a48;
           --dim: #62697a;
           --line: #d9d3c6;
           --accent: #365ba8;
@@ -193,12 +195,89 @@
         font-weight: 400;
       }
 
+      .site-header {
+        align-items: center;
+        padding: 4px 0 8px;
+      }
+      .site-header .mark {
+        font-size: 18px;
+        letter-spacing: 0.14em;
+      }
+      .site-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 24px;
+        letter-spacing: normal;
+        text-transform: none;
+      }
+      .hero {
+        padding: 26px 0 12px;
+      }
+      .hero .eyebrow {
+        margin: 0 0 16px;
+        font-size: 13px;
+      }
       h1 {
-        font-size: clamp(28px, 4.6vw, 54px);
-        line-height: 1.15;
-        letter-spacing: -0.05em;
-        max-width: 22ch;
-        margin: 34px 0 16px;
+        color: var(--heading);
+        font-size: clamp(28px, 3.8vw, 46px);
+        line-height: 1.25;
+        letter-spacing: -0.04em;
+        margin: 0 0 20px;
+      }
+      h1 span {
+        display: block;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+        margin-top: 24px;
+      }
+      .hero-actions a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 10px 24px;
+        border: 1px solid var(--accent);
+        font-size: 15px;
+      }
+      .hero-actions .primary {
+        background: var(--accent);
+        color: var(--bg);
+      }
+      .hero-meta {
+        margin: 10px 0 0;
+        color: var(--dim);
+        font-size: 11px;
+      }
+      .hero-preview {
+        margin: 10px 0 24px;
+      }
+      .hero-preview img {
+        padding: 8px;
+        background: #1a1b26;
+      }
+      @media (max-width: 640px) {
+        .site-header {
+          flex-wrap: wrap;
+        }
+        .site-header .mark {
+          font-size: 15px;
+        }
+        .site-links {
+          gap: 12px;
+        }
+        .hero {
+          padding-top: 20px;
+        }
+        .hero-actions a {
+          padding: 10px 16px;
+          font-size: 13px;
+        }
+        .hero-preview img {
+          padding: 2px;
+        }
       }
       h2 {
         font-size: 18px;
@@ -215,8 +294,9 @@
         overflow-wrap: anywhere;
       }
       .intro {
-        max-width: 74ch;
-        font-size: 15px;
+        max-width: 70ch;
+        margin: 0;
+        font-size: clamp(15px, 1.5vw, 18px);
       }
       .links {
         display: flex;
@@ -480,7 +560,7 @@
   </head>
   <body>
     <main>
-      <div class="row">
+      <div class="row site-header">
         <a class="mark" href="/"
           ><svg
             class="glyph"
@@ -517,58 +597,47 @@
             /></svg
           >OMASTORM</a
         >
-        <span class="right tag"
-          ><a href="https://github.com/wesleygrimes/omastorm/releases"
-            >Beta · Releases</a
-          ></span
-        >
+        <nav class="site-links" aria-label="Main navigation">
+          <a href="https://github.com/wesleygrimes/omastorm#readme"
+            >User guide</a
+          >
+          <a href="https://github.com/wesleygrimes/omastorm">GitHub ↗</a>
+        </nav>
       </div>
       <div class="rule"></div>
-      <header>
-        <h1>Live weather radar in your Omarchy bar.</h1>
+      <header class="hero">
+        <p class="eyebrow">Weather radar for Omarchy</p>
+        <h1>
+          <span>Live weather radar,</span
+          ><span>right in your Omarchy bar.</span>
+        </h1>
         <p class="intro">
-          A radar that lives next to the clock. Open the popover for your
-          selected radar and its actual scan time. Expand to the full window for
-          NOAA NEXRAD sweeps in the U.S. or the EUMETNET OPERA European mosaic,
-          drawn in your Omarchy theme.
+          See nearby storms at a glance. Open the full radar window to explore
+          and play back recent scans.
         </p>
-        <nav class="links" aria-label="Get started">
-          <a href="#install">Install Omastorm</a>
-          <a href="https://github.com/wesleygrimes/omastorm">View on GitHub</a>
-          <a href="https://github.com/wesleygrimes/omastorm#readme"
-            >Read the user guide</a
+        <nav class="hero-actions" aria-label="Get started">
+          <a class="primary" href="#install">Install Omastorm</a>
+          <a href="https://github.com/wesleygrimes/omastorm"
+            >View on GitHub ↗</a
           >
         </nav>
+        <p class="hero-meta">
+          Free · Local-first · U.S. &amp; European radar ·
+          <a href="https://github.com/wesleygrimes/omastorm/releases">Beta</a>
+        </p>
       </header>
-      <div
-        class="theme-showcase"
-        role="group"
-        aria-label="Omastorm in dark and light themes"
-      >
-        <figure class="gallery">
-          <img
-            src="media/window.png"
-            width="640"
-            height="480"
-            alt="Omastorm radar window in the dark Tokyo Night theme."
-            fetchpriority="high"
-          />
-          <figcaption>
-            <span>Dark mode</span><span>Tokyo Night</span>
-          </figcaption>
-        </figure>
-        <figure class="gallery">
-          <img
-            src="media/window-light.png"
-            width="640"
-            height="480"
-            alt="Omastorm radar window in the light Flexoki Light theme."
-          />
-          <figcaption>
-            <span>Light mode</span><span>Flexoki Light</span>
-          </figcaption>
-        </figure>
-      </div>
+      <figure class="gallery hero-preview">
+        <img
+          src="media/hero.png"
+          width="1099"
+          height="516"
+          fetchpriority="high"
+          alt="Omastorm’s full radar window beside its compact bar popover, showing storms near Oklahoma City."
+        />
+        <figcaption>
+          A quick look in your bar. The full picture in your radar window.
+        </figcaption>
+      </figure>
       <ul class="points">
         <li>
           <b>Live radar.</b> NEXRAD paints as the antenna turns; OPERA supplies
@@ -683,6 +752,40 @@ o.bind("SUPER + SHIFT + R", "Omastorm", "omarchy shell shell toggle com.omastorm
         </p>
       </section>
 
+      <section class="guide" aria-labelledby="your-theme">
+        <h2 id="your-theme">At home in your theme.</h2>
+        <div
+          class="theme-showcase"
+          role="group"
+          aria-label="Omastorm in dark and light themes"
+        >
+          <figure class="gallery">
+            <img
+              src="media/window.png"
+              width="640"
+              height="480"
+              alt="Omastorm radar window in the dark Tokyo Night theme."
+              loading="lazy"
+            />
+            <figcaption>
+              <span>Dark mode</span><span>Tokyo Night</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery">
+            <img
+              src="media/window-light.png"
+              width="640"
+              height="480"
+              alt="Omastorm radar window in the light Flexoki Light theme."
+              loading="lazy"
+            />
+            <figcaption>
+              <span>Light mode</span><span>Flexoki Light</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="guide" aria-labelledby="find-place">
         <h2 id="find-place">Your place. Your radar.</h2>
         <div class="cards">
@@ -785,18 +888,6 @@ o.bind("SUPER + SHIFT + R", "Omastorm", "omarchy shell shell toggle com.omastorm
           frame, and <kbd>Home</kbd> / <kbd>End</kbd> jump to the oldest or
           newest.
         </p>
-        <figure class="gallery">
-          <img
-            src="media/hero.png"
-            alt="Omastorm’s full radar window beside its compact bar popover."
-            width="1099"
-            height="516"
-          />
-          <figcaption>
-            Next to the clock, or room to explore. The popover expands with your
-            view and playback intact.
-          </figcaption>
-        </figure>
         <p class="fine">
           The frame age tells you how stale the picture is; the timeline stamp
           tells you when the sweep was observed. The LIVE light turns yellow
