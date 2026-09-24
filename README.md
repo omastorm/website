@@ -46,7 +46,7 @@ The workflow verifies that the commit belongs to `main`, runs `mise run check`, 
 
 ### Cloudflare setup
 
-Add these repository Actions secrets:
+In repository Settings → Environments → `production`, add these environment secrets:
 
 - `CLOUDFLARE_ACCOUNT_ID`: the account hosting the Pages project.
 - `CLOUDFLARE_API_TOKEN`: a token with **Account → Cloudflare Pages → Edit**, scoped to that account.
