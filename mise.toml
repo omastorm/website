@@ -1,5 +1,7 @@
 [tools]
 node = "24.21.0"
+actionlint = "1.7.12"
+shellcheck = "0.11.0"
 
 [tasks.setup]
 description = "Install locked development dependencies"
@@ -14,8 +16,9 @@ description = "Format source and configuration"
 run = "node_modules/.bin/prettier --write ."
 
 [tasks.lint]
-description = "Check formatting and HTML"
+description = "Check formatting, HTML, and GitHub workflows"
 run = [
+  "actionlint",
   "node_modules/.bin/prettier --check .",
   "node_modules/.bin/html-validate 'site/**/*.html'",
 ]
