@@ -32,13 +32,15 @@ Describe the user-visible result, link the approved issue, and report the checks
 Every PR title and commit message must use Conventional Commits:
 
 ```text
-feat: Add a coverage map
-fix: Keep the install button visible on mobile
-chore(deps): Update development tools
-feat!: Replace the installation instructions
+feat: add a coverage map
+fix: keep the install button visible on mobile
+chore(deps): update development tools
+feat!: replace the installation instructions
 ```
 
-Use `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `test`, `build`, `ci`, `chore`, or `revert`. A scope is optional. Use `!` in the PR title for breaking changes and explain the impact in the PR body.
+Use `feat`, `fix`, `perf`, `refactor`, `style`, `docs`, `test`, `build`, `ci`, `chore`, or `revert`. A scope is optional. Follow [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/). Our repository convention uses lowercase types and scopes, and descriptions that start lowercase; preserve names such as GitHub within the description. Use `!` in the PR title for breaking changes and explain the impact in the PR body.
+
+Use `feat` for new website capabilities, `fix` for website bugs, and `ci` for workflow automation.
 
 Write the description for readers: say what changes, in plain language. The PR title becomes the squash commit and release-note entry. Features bump the minor version, breaking changes bump the major, and other changes bump the patch. The conventional prefix is removed from release notes.
 
@@ -47,7 +49,7 @@ CI checks the PR title and every commit in the PR. Rebase and reword invalid com
 To check locally:
 
 ```sh
-PR_TITLE="feat: Add a coverage map" mise run pr-title
+PR_TITLE="feat: add a coverage map" mise run pr-title
 COMMIT_FROM=origin/main COMMIT_TO=HEAD mise run commits
 ```
 
