@@ -1,0 +1,50 @@
+[tools]
+node = "24.21.0"
+actionlint = "1.7.12"
+shellcheck = "0.11.0"
+
+[tasks.setup]
+description = "Install locked development dependencies"
+run = "npm ci --ignore-scripts"
+
+[tasks.dev]
+description = "Preview at http://127.0.0.1:8765"
+run = "node_modules/.bin/http-server site -a 127.0.0.1 -p 8765 -c-1"
+
+[tasks.format]
+description = "Format source and configuration"
+run = "node_modules/.bin/prettier --write ."
+
+[tasks.lint]
+description = "Check formatting, HTML, and GitHub workflows"
+run = [
+  "actionlint",
+  "node_modules/.bin/prettier --check .",
+  "node_modules/.bin/html-validate 'site/**/*.html'",
+]
+
+[tasks.links]
+description = "Check local page and asset links"
+run = "node_modules/.bin/linkinator site --check-fragments --check-css --config linkinator.config.json"
+
+[tasks.check]
+description = "Run all website checks"
+depends = ["lint", "links"]
+
+[tasks.contributors]
+description = "Regenerate contributor credits"
+run = "node_modules/.bin/all-contributors generate"
+
+[tasks.commits]
+description = "Validate commit messages between COMMIT_FROM and COMMIT_TO"
+run = """
+if [ "$(git rev-list --count "${COMMIT_TO:?Set COMMIT_TO}")" -eq 1 ]; then
+  git log -1 --format=%B "$COMMIT_TO" | node_modules/.bin/commitlint --verbose
+else
+  node_modules/.bin/commitlint --from "${COMMIT_FROM:?Set COMMIT_FROM}" --to "$COMMIT_TO" --verbose
+fi
+"""
+
+[tasks.pr-title]
+description = "Validate PR_TITLE as a conventional commit"
+run = 'printf "%s\n" "${PR_TITLE:?Set PR_TITLE}" | node_modules/.bin/commitlint --verbose'

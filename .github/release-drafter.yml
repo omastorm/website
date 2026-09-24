@@ -1,0 +1,36 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+change-template: "- $TITLE"
+no-changes-template: "No changes since the last release."
+categories:
+  - title: Breaking changes
+    exclusive: true
+    semver-increment: major
+    when:
+      conventional:
+        breaking: true
+  - title: New
+    exclusive: true
+    semver-increment: minor
+    when:
+      conventional:
+        type: feat
+  - title: Fixes
+    exclusive: true
+    semver-increment: patch
+    when:
+      conventional:
+        type: fix
+  - title: Improvements
+    exclusive: true
+    semver-increment: patch
+    when:
+      conventional:
+        types: [perf, refactor, style, docs]
+  - title: Maintenance
+    semver-increment: patch
+replacers:
+  - search: '/^- (?:feat|fix|perf|refactor|style|docs|test|build|ci|chore|revert)(?:\([^\r\n)]+\))?!?: /gm'
+    replace: "- "
+template: |
+  $CHANGES
