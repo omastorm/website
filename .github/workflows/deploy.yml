@@ -30,7 +30,7 @@ jobs:
       - name: Verify release belongs to main
         run: git merge-base --is-ancestor HEAD origin/main
       - name: Install mise tools
-        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c
+        uses: jdx/mise-action@6be3c7ed4c21d4f76b208d351d95aac273ebb76d
       - name: Install dependencies
         run: mise run setup
       - name: Check website
@@ -45,7 +45,7 @@ jobs:
             exit 1
           fi
       - name: Deploy released site
-        uses: cloudflare/wrangler-action@25853364521e0d392ece9b0c1e97a4b37b638087
+        uses: cloudflare/wrangler-action@953926a2e2182532811c01a25e53647d93bf07c0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
